@@ -6,19 +6,19 @@ class Vue {
     console.log("Vue constructor() is running...")
     this.$options = options
     this.$el = options.el
-    this._data = options.data
-    Object.keys(this._data).forEach(key=>this._proxy(key))
-    new Observer(this._data)
+    this.$data = options.data
+    Object.keys(this.$data).forEach(key=>this._proxy(key))
+    new Observer(this.$data)
     new Complier(this.$el,this)
   }
   _proxy(key){
     let self = this;
     Object.defineProperty(this,key,{
       get(){
-        return self._data[key]
+        return self.$data[key]
       },
       set(val){
-        self._data[key] = val
+        self.$data[key] = val
       }
     })
   }

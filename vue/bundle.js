@@ -95,19 +95,19 @@ class Vue {
     console.log("Vue constructor() is running...")
     this.$options = options
     this.$el = options.el
-    this._data = options.data
-    Object.keys(this._data).forEach(key=>this._proxy(key))
-    new __WEBPACK_IMPORTED_MODULE_0__Observer_js__["a" /* default */](this._data)
+    this.$data = options.data
+    Object.keys(this.$data).forEach(key=>this._proxy(key))
+    new __WEBPACK_IMPORTED_MODULE_0__Observer_js__["a" /* default */](this.$data)
     new __WEBPACK_IMPORTED_MODULE_1__Complier_js__["a" /* default */](this.$el,this)
   }
   _proxy(key){
     let self = this;
     Object.defineProperty(this,key,{
       get(){
-        return self._data[key]
+        return self.$data[key]
       },
       set(val){
-        self._data[key] = val
+        self.$data[key] = val
       }
     })
   }
