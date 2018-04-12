@@ -75,9 +75,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 let vm = new __WEBPACK_IMPORTED_MODULE_0__Vue__["a" /* default */]({
   el:"myApp",
   data:{
-    message: 'vue实现双向数据绑定'
+    message: 'this is message contents'
   }
 });
+window.vm = vm;
 
 /***/ }),
 /* 1 */
